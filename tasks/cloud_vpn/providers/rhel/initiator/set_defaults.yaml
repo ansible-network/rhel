@@ -1,13 +1,5 @@
 ---
 
-- name: Set ansible_connection fact to 'ssh'
-  set_fact:
-    cloud_vpn_initiator_ansible_connection: ssh
-
-- name: Set ansible_network_os fact to 'linux'
-  set_fact:
-    cloud_vpn_initiator_ansible_network_os: linux
-
 - name: Set initiator user fact to 'centos' if not defined
   set_fact:
     cloud_vpn_initiator_user: "{{ cloud_vpn_initiator_user | default('centos') }}"
