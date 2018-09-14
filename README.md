@@ -17,6 +17,12 @@ playbooks to perform automation activities on RHEL/CentOS machines.
 Please see the documentation link for each function for details on how to use
 the function in an Ansible playbook.
 
+### Cloud VPN
+* cloud_vpn/configure_vpn_initiator [[source]](https://github.com/ansible-network/rhel/blob/devel/tasks/cloud_vpn/configure_vpn_initiator.yaml) [[docs]](https://github.com/ansible-network/rhel/blob/devel/docs/cloud_vpn/configure_vpn_initiator.md)
+* cloud_vpn/configure_routing_initiator [[source]](https://github.com/ansible-network/rhel/blob/devel/tasks/cloud_vpn/configure_routing_initiator.yaml) [[docs]](https://github.com/ansible-network/rhel/blob/devel/docs/cloud_vpn/configure_routing_initiator.md)
+* cloud_vpn/configure_vpn_responder [[source]](https://github.com/ansible-network/rhel/blob/devel/tasks/cloud_vpn/configure_vpn_responder.yaml) [[docs]](https://github.com/ansible-network/rhel/blob/devel/docs/cloud_vpn/configure_vpn_responder.md)
+* cloud_vpn/configure_routing_responder [[source]](https://github.com/ansible-network/rhel/blob/devel/tasks/cloud_vpn/configure_routing_responder.yaml) [[docs]](https://github.com/ansible-network/rhel/blob/devel/docs/cloud_vpn/configure_routing_responder.md)
+
 ## License
 
 GPLv3
