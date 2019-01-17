@@ -16,15 +16,29 @@
 
 - name: Push Libreswan configuration file to initiator
   template:
-    src: cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}/configure_static_{{ cloud_vpn_mode }}.j2
+    src: "{{ lookup('first_found', params) }}"
     dest: /etc/ipsec.d/{{ cloud_vpn_name }}.conf
+  vars:
+    params:
+      files:
+        - "configure_static_{{ cloud_vpn_mode }}.j2"
+      paths:
+        - templates/cloud_vpn/providers/rhel/initiator
+        - "templates/cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}"
   become: yes
   delegate_to: initiator
 
 - name: Push Libreswan secrets file to initiator
   template:
-    src: cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}/configure_psk_{{ cloud_vpn_mode }}.j2
+    src: "{{ lookup('first_found', params) }}"
     dest: /etc/ipsec.d/ipsec.secrets
+  vars:
+    params:
+      files:
+        - "configure_static_{{ cloud_vpn_mode }}.j2"
+      paths:
+        - templates/cloud_vpn/providers/rhel/initiator
+        - "templates/cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}"
   become: yes
   delegate_to: initiator
 
