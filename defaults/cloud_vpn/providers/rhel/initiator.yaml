@@ -1,0 +1,2 @@
+cloud_vpn_initiator_user: centos
+cloud_vpn_initiator_outside_interface: eth0
