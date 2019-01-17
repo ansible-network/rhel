@@ -23,8 +23,8 @@
       files:
         - "configure_static_{{ cloud_vpn_mode }}.j2"
       paths:
-        - templates/cloud_vpn/providers/rhel/responder
         - "templates/cloud_vpn/providers/rhel/responder/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/responder
   become: yes
   delegate_to: responder
 
@@ -37,8 +37,8 @@
       files:
         - "configure_psk_{{ cloud_vpn_mode }}.j2"
       paths:
-        - templates/cloud_vpn/providers/rhel/responder
         - "templates/cloud_vpn/providers/rhel/responder/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/responder
   become: yes
   delegate_to: responder
 

@@ -23,8 +23,8 @@
       files:
         - "configure_static_{{ cloud_vpn_mode }}.j2"
       paths:
-        - templates/cloud_vpn/providers/rhel/initiator
         - "templates/cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/initiator
   become: yes
   delegate_to: initiator
 
@@ -37,8 +37,8 @@
       files:
         - "configure_static_{{ cloud_vpn_mode }}.j2"
       paths:
-        - templates/cloud_vpn/providers/rhel/initiator
         - "templates/cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/initiator
   become: yes
   delegate_to: initiator
 
