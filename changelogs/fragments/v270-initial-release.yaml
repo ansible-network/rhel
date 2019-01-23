@@ -1,0 +1,6 @@
+major_changes:
+- 2.7 release of the ``rhel`` Ansible role.
+minor_changes:
+- Use include_role defaults_from instead of set defaults task files
+- Add aggressive mode
+- Use default template in case no specific peer folder is available in tepmlates folder
