@@ -48,3 +48,8 @@
     state: restarted
   become: yes
   delegate_to: initiator
+
+- name: Enable IP forwarding
+  command: /sbin/sysctl -w net.ipv4.ip_forward=1
+  become: yes
+  delegate_to: initiator
