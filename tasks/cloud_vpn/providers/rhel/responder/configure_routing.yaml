@@ -1,6 +1,6 @@
 ---
 
 - name: Add static routes to initiator
-  command: "ip route add {{ cloud_vpn_initiator_cidr }} dev {{ cloud_vpn_responder_tunnel_interface }}"
+  shell: "ip route | grep {{ cloud_vpn_initiator_cidr }} || ip route add {{ cloud_vpn_initiator_cidr }} dev {{ cloud_vpn_responder_tunnel_interface }}"
   become: yes
   delegate_to: responder
