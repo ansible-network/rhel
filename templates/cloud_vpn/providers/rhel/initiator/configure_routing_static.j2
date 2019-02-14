@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ "$PLUTO_VERB" = "route-client" ]; then
+    ip route add {{ cloud_vpn_responder_cidr }} dev {{ cloud_vpn_initiator_tunnel_interface }}
+fi
+
+if [ "$PLUTO_VERB" = "unroute-client" ]; then
+    ip route del {{ cloud_vpn_responder_cidr }} dev {{ cloud_vpn_initiator_tunnel_interface }}
+fi

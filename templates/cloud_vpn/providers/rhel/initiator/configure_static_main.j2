@@ -10,3 +10,4 @@ conn {{ cloud_vpn_name }}
     vti-interface={{ cloud_vpn_initiator_tunnel_interface }}
     vti-routing=no
     leftvti={{ cloud_vpn_initiator_tunnel_ip }}/30
+    leftupdown=/etc/ipsec.d/{{ cloud_vpn_name }}-routes.sh

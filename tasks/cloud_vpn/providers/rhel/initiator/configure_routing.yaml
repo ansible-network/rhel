@@ -1,5 +1,3 @@
 ---
-- name: Add static routes to responder
-  shell: "ip route | grep {{ cloud_vpn_responder_cidr }} || ip route add {{ cloud_vpn_responder_cidr }} dev {{ cloud_vpn_initiator_tunnel_interface }}"
-  become: yes
-  delegate_to: initiator
+- name: Include configure routing tasks per cloud_vpn_routing var
+  include_tasks: "{{ role_path }}/tasks/cloud_vpn/providers/rhel/initiator/configure_routing_{{ cloud_vpn_routing }}.yaml"

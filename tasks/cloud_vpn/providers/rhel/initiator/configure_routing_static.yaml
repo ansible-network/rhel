@@ -1,0 +1,27 @@
+---
+- name: Allow IPSEC to run custom updown script with SELinux
+  command: semanage permissive -a ipsec_mgmt_t
+  become: yes
+  delegate_to: initiator
+
+- name: Push routes configurator updown file to initiator
+  template:
+    src: "{{ lookup('first_found', params) }}"
+    dest: /etc/ipsec.d/{{ cloud_vpn_name }}-routes.sh
+    mode: 0755
+  vars:
+    params:
+      files:
+        - "configure_routing_static.j2"
+      paths:
+        - "templates/cloud_vpn/providers/rhel/initiator/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/initiator
+  become: yes
+  delegate_to: initiator
+
+- name: Restart IPSEC service
+  systemd:
+    name: ipsec
+    state: restarted
+  become: yes
+  delegate_to: initiator
