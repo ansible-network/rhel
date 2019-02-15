@@ -1,0 +1,38 @@
+---
+- name: Install quagga package
+  yum:
+    name: quagga
+  become: yes
+  delegate_to: responder
+
+- name: Push Quagga bgpd configuration file to responder
+  template:
+    src: "{{ lookup('first_found', params) }}"
+    dest: /etc/quagga/bgpd.conf
+    owner: quagga
+    group: quagga
+  vars:
+    params:
+      files:
+        - "configure_routing_bgp.j2"
+      paths:
+        - "templates/cloud_vpn/providers/rhel/responder/{{ cloud_vpn_responder_provider }}"
+        - templates/cloud_vpn/providers/rhel/responder
+  become: yes
+  delegate_to: responder
+
+- name: Start Zebra service
+  systemd:
+    name: zebra
+    state: started
+    enabled: yes
+  become: yes
+  delegate_to: responder
+
+- name: Start BGPd service
+  systemd:
+    name: bgpd
+    state: started
+    enabled: yes
+  become: yes
+  delegate_to: responder
