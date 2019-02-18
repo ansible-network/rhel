@@ -2,5 +2,5 @@ cloud_vpn_responder_user: centos
 cloud_vpn_responder_outside_interface: eth0
 cloud_vpn_responder_tunnel_interface: vti0
 cloud_vpn_responder_tunnel_failover_interface: vti1
-cloud_vpn_responder_tunnel_interface_mark: 5/0xfffffff1
-cloud_vpn_responder_tunnel_failover_interface_mark: 5/0xfffffff2
+cloud_vpn_responder_tunnel_interface_mark: 1/0xffffffff
+cloud_vpn_responder_tunnel_failover_interface_mark: 2/0xffffffff

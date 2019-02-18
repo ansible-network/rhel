@@ -7,6 +7,6 @@
 !
 router bgp {{ cloud_vpn_initiator_bgp_asn }}
  bgp router-id {{ cloud_vpn_initiator_public_ip }}
- network {{ cloud_vpn_tunnel_cidr }}
+ network {{ cloud_vpn_initiator_cidr }}
  network 0.0.0.0/0
  neighbor {{ cloud_vpn_responder_tunnel_ip }} remote-as {{ cloud_vpn_responder_bgp_asn }}
