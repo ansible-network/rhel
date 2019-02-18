@@ -1,3 +1,6 @@
 cloud_vpn_initiator_user: centos
 cloud_vpn_initiator_outside_interface: eth0
 cloud_vpn_initiator_tunnel_interface: vti0
+cloud_vpn_initiator_tunnel_failover_interface: vti1
+cloud_vpn_initiator_tunnel_interface_mark: 1/0xffffffff
+cloud_vpn_initiator_tunnel_failover_interface_mark: 2/0xffffffff

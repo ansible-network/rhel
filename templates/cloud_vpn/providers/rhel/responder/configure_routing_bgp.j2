@@ -1,0 +1,12 @@
+! -*- bgp -*-
+!
+! BGPd sample configuratin file
+!
+! $Id: bgpd.conf.sample,v 1.1 2002/12/13 20:15:29 paul Exp $
+!
+!
+router bgp {{ cloud_vpn_responder_bgp_asn }}
+ bgp router-id {{ cloud_vpn_responder_public_ip }}
+ network {{ cloud_vpn_responder_cidr }}
+ network 0.0.0.0/0
+ neighbor {{ cloud_vpn_initiator_tunnel_ip }} remote-as {{ cloud_vpn_initiator_bgp_asn }}
