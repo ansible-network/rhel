@@ -2,12 +2,29 @@
 Ansible Network rhel
 ====================
 
-.. _Ansible Network rhel_*v2.7.0*:
+.. _Ansible Network rhel_*v2.7.1*:
 
-v2.7.0
+*v2.7.1*
 ==============
 
-.. _Ansible Network rhel_*v2.7.0*_Major Changes:
+.. _Ansible Network rhel_*v2.7.1*_Minor Changes:
+
+Minor Changes
+-------------
+
+- Add Azure support as responder
+
+- Add BGP support
+
+- Add unconfigure hooks
+
+
+.. _Ansible Network rhel_v2.7.0:
+
+v2.7.0
+======
+
+.. _Ansible Network rhel_v2.7.0_Major Changes:
 
 Major Changes
 -------------
@@ -15,7 +32,7 @@ Major Changes
 - 2.7 release of the ``rhel`` Ansible role.
 
 
-.. _Ansible Network rhel_*v2.7.0*_Minor Changes:
+.. _Ansible Network rhel_v2.7.0_Minor Changes:
 
 Minor Changes
 -------------

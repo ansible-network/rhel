@@ -1,0 +1,4 @@
+minor_changes:
+- Add Azure support as responder
+- Add BGP support
+- Add unconfigure hooks
