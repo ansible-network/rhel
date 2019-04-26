@@ -1,4 +1,5 @@
-cloud_vpn_responder_user: centos
+cloud_vpn_responder_user: ansible
+cloud_vpn_responder_ansible_connection: ssh
 cloud_vpn_responder_outside_interface: eth0
 cloud_vpn_responder_tunnel_interface: vti0
 cloud_vpn_responder_tunnel_failover_interface: vti1
