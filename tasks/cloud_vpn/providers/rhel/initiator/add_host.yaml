@@ -7,6 +7,11 @@
     ansible_connection: ssh
     ansible_ssh_private_key_file: "{{ cloud_vpn_initiator_ssh_private_key_file }}"
 
+- name: Get facts
+  setup:
+  delegate_to: initiator
+  delegate_facts: true
+
 - name: Wait for SSH port to be reachable
   wait_for:
     host: "{{ cloud_vpn_initiator_public_ip }}"
